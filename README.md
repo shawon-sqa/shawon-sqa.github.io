@@ -1,2 +1,2 @@
 
-https://shawon-sqa.github.io/portfolio/
+ https://shawon-sqa.github.io/
