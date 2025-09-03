@@ -588,13 +588,14 @@
 </head>
 
 <body>
-  <!-- MOBILE MENU BUTTON + BACKDROP -->
-  <button class="hamburger" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false">
-    <span class="bar"></span>
-  </button>
+ <!-- MOBILE MENU BUTTON + BACKDROP -->
+<button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false">
+  <span class="bar"></span>
+</button>
 
-  <!-- BACKDROP -->
-  <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+<!-- BACKDROP -->
+<div class="backdrop" id="backdrop" aria-hidden="true"></div>
+
 
   <!-- =========== SIDEBAR (Profile + Nav) =========== -->
   <aside class="sidebar" id="sidebar">
@@ -1297,6 +1298,24 @@
       window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
     });
   </script>
+  <script>
+  const hamburger = document.getElementById("hamburger");
+  const sidebar = document.getElementById("sidebar");
+  const backdrop = document.getElementById("backdrop");
+
+  hamburger.addEventListener("click", () => {
+    const isOpen = sidebar.classList.toggle("open");
+    backdrop.classList.toggle("active", isOpen);
+    hamburger.setAttribute("aria-expanded", isOpen);
+  });
+
+  backdrop.addEventListener("click", () => {
+    sidebar.classList.remove("open");
+    backdrop.classList.remove("active");
+    hamburger.setAttribute("aria-expanded", "false");
+  });
+</script>
+
 </body>
 
 </html>
