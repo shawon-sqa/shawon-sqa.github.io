@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>Md Shawon Ahmed —Portfolio</title>
-    <link rel="icon" type="image/png" href="images/head4.jpg" />
+  <title>Md Shawon Ahmed Portfolio</title>
+  <link rel="icon" type="image/png" href="images/head4.jpg" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
@@ -25,7 +25,7 @@
   <style>
     :root {
       --brand: #ffbd39;
-      --bg: #0c0c0c;
+      --bg: #0c0c0c; 
       --panel: #111;
       --text: #fff;
       --muted: rgba(255, 255, 255, 0.7);
@@ -589,7 +589,7 @@
 </head>
 
 <body>
- <!-- MOBILE MENU BUTTON + BACKDROP -->
+  <!-- MOBILE MENU BUTTON + BACKDROP -->
 <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false">
   <span class="bar"></span>
 </button>
@@ -639,49 +639,68 @@
   <!-- =========== MAIN CONTENT =========== -->
   <main class="content">
     <!-- HERO -->
-    <section class="section hero" id="home" style="position: relative; 
-         min-height: 100vh; 
-         display: flex; 
-         align-items: center; 
-         justify-content: center; 
-         text-align: center; 
-         padding: 20px; 
-         color: white;
-         background: url('images/Shawon.png') no-repeat center top;
-         background-size: cover;">
+   <!-- HERO SECTION -->
+<section id="home" class="hero-section">
+  <div class="hero-overlay"></div>
 
-      <!-- Dark Overlay -->
-      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-              background: rgba(0,0,0,0.5); z-index: 1;"></div>
+  <div class="hero-container">
+    <!-- Left Text -->
+    <div class="hero-text">
+      <div class="intro">Hello 👋</div>
+      <h1 class="hero-title">
+        I'm <span class="highlight">Md Shawon Ahmed</span>, 
+        <span id="typing">SQA Engineer</span>
+      </h1>
+      <p class="hero-desc">
+        I ensure software quality through structured test planning, robust manual and automated testing, 
+        and clear documentation. I care deeply about reliable releases and great user experiences.
+      </p>
 
-      <!-- Content -->
-      <div style="max-width: 900px; position: relative; z-index: 2;">
-        <div style="font-size: 20px; margin-bottom: 10px;">Hello 👋</div>
-
-        <h1 style="font-size: clamp(28px, 4vw, 42px); line-height: 1.3; margin-bottom: 15px;">
-          I'm <span style="color: var(--brand);">Md Shawon Ahmed</span>,
-          <span id="typing">SQA Engineer</span>
-        </h1>
-
-        <p style="font-size: clamp(16px, 2.5vw, 20px); margin-top: 10px; margin-bottom: 20px;">
-          I ensure software quality through structured test planning, robust manual and automated testing, and clear
-          documentation.
-          I care deeply about reliable releases and great user experiences.
-        </p>
-
-        <div>
-          <a href="https://drive.google.com/file/d/14z2dUarlJCpv_m-RecEFmwz8wbQDZTob/view?usp=sharing" target="_blank"
-            class="btn btn-resume">
-            Download Resume
-          </a>
-
-          <a href="#contact" class="btn btn-hire">
-            Hire Me
-          </a>
-        </div>
-
+      <div class="hero-buttons">
+        <a href="https://drive.google.com/file/d/14z2dUarlJCpv_m-RecEFmwz8wbQDZTob/view?usp=sharing" 
+           target="_blank" class="btn btn-brand">Download Cv</a>
+        <a href="#contact" class="btn btn-ghost">Hire Me</a>
       </div>
-    </section>
+    </div>
+
+    <!-- Right Image -->
+    <div class="hero-image">
+      <img src="images/Shawon.png" alt="Md Shawon Ahmed">
+    </div>
+  </div>
+</section>
+
+<!-- Typing Animation -->
+<script>
+const roles = ["SQA Engineer", "QA Tester", "Automation Specialist"];
+let index = 0, charIndex = 0, current = "", typing = true;
+const typingElement = document.getElementById("typing");
+
+function typeEffect() {
+  if (typing) {
+    if (charIndex < roles[index].length) {
+      current += roles[index][charIndex++];
+      typingElement.textContent = current;
+      setTimeout(typeEffect, 120);
+    } else {
+      typing = false;
+      setTimeout(typeEffect, 1200);
+    }
+  } else {
+    if (charIndex > 0) {
+      current = current.slice(0, --charIndex);
+      typingElement.textContent = current;
+      setTimeout(typeEffect, 60);
+    } else {
+      typing = true;
+      index = (index + 1) % roles.length;
+      setTimeout(typeEffect, 200);
+    }
+  }
+}
+typeEffect();
+</script>
+
 
 <!-- ABOUT -->
 <section class="section" id="about">
@@ -693,7 +712,7 @@
       <!-- Left -->
       <div class="about-left">
         <div class="about-image">
-          <img src="images/about-me.png" alt="Md Shawon Ahmed" />
+          <img src="images/about-me20.png" alt="Md Shawon Ahmed" />
         </div>
         <p class="about-intro">
           Hi 👋 I’m <strong>Md Shawon Ahmed</strong>, a detail-oriented
@@ -729,262 +748,575 @@
 
     <!-- SKILLS -->
     <section class="section" id="skills">
-      <div class="container">
-        <h2 class="section-title">Skills</h2>
-        <p class="section-sub">Core strengths at a glance</p>
-        <div class="grid grid-3">
-          <div class="card">
-            <h3>Manual Testing</h3>
-            <p class="lead">Test planning, cases, execution, regression, exploratory testing, UAT support.</p>
-            <div class="quick-badges" style="margin-top:8px">
-              <span class="tag">Web</span><span class="tag">Mobile</span><span class="tag">Smoke</span>
-            </div>
+  <div class="container">
+    <h2 class="section-title">Skills</h2>
+    <p class="section-sub">Core strengths at a glance</p>
+
+    <div class="grid grid-3">
+
+      <div class="card">
+        <div class="skill-header">
+          <div class="skill-icon" aria-label="Manual Testing icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M9 3h6a2 2 0 0 1 2 2v1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h1V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M9 11h6M9 15h6M8 11l-2 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
-          <div class="card">
-            <h3>Automation</h3>
-            <p class="lead">Selenium / Playwright basics, data-driven tests, CI-friendly suites.</p>
-            <div class="quick-badges" style="margin-top:8px">
-              <span class="tag">Selenium</span><span class="tag">Playwright</span><span class="tag">JUnit</span>
-            </div>
-          </div>
-          <div class="card">
-            <h3>API Testing</h3>
-            <p class="lead">REST validation, schema checks, auth flows, performance sampling.</p>
-            <div class="quick-badges" style="margin-top:8px">
-              <span class="tag">Postman</span><span class="tag">Newman</span><span class="tag">Swagger</span>
-            </div>
-          </div>
-          <div class="card">
-            <h3>Test Management</h3>
-            <p class="lead">Requirements traceability, coverage, risk-based prioritization.</p>
-            <div class="quick-badges" style="margin-top:8px">
-              <span class="tag">JIRA</span><span class="tag">TestRail</span><span class="tag">Confluence</span>
-            </div>
-          </div>
-          <div class="card">
-            <h3>Mobile QA</h3>
-            <p class="lead">Android manual testing, device matrix, crash triage, logs.</p>
-            <div class="quick-badges" style="margin-top:8px">
-              <span class="tag">ADB</span><span class="tag">Logcat</span><span class="tag">Firebase</span>
-            </div>
-          </div>
-          <div class="card">
-            <h3>Data & Tools</h3>
-            <p class="lead">SQL basics, lightweight scripts, analytics/GA for QA insights.</p>
-            <div class="quick-badges" style="margin-top:8px">
-              <span class="tag">SQL</span><span class="tag">GA4</span><span class="tag">Git</span>
-            </div>
-          </div>
+          <h3>Manual Testing</h3>
+        </div>
+        <p class="lead">Test planning, cases, execution, regression, exploratory testing, UAT support.</p>
+        <div class="quick-badges">
+          <span class="tag">Web</span><span class="tag">Mobile</span><span class="tag">Smoke</span>
         </div>
       </div>
-    </section>
+
+      <div class="card">
+        <div class="skill-header">
+          <div class="skill-icon" aria-label="Automation icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M19 12a7 7 0 0 0-.1-1l2-1.2-2-3.4-2 .8a7 7 0 0 0-1.7-1L14 2h-4l-.2 3.2a7 7 0 0 0-1.7 1l-2-.8-2 3.4 2 1.2a7 7 0 0 0 0 2.1l-2 1.2 2 3.4 2-.8a7 7 0 0 0 1.7 1l.2 3.2h4l.2-3.2a7 7 0 0 0 1.7-1l2 .8 2-3.4-2-1.2c.07-.33.1-.66.1-1Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Automation</h3>
+        </div>
+        <p class="lead">Selenium / Playwright basics, data-driven tests, CI-friendly suites.</p>
+        <div class="quick-badges">
+          <span class="tag">Selenium</span><span class="tag">Playwright</span><span class="tag">JUnit</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="skill-header">
+          <div class="skill-icon" aria-label="API Testing icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="4" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M3 8h18" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M10 12l-2 2 2 2M14 12l2 2-2 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>API Testing</h3>
+        </div>
+        <p class="lead">REST validation, schema checks, auth flows, performance sampling.</p>
+        <div class="quick-badges">
+          <span class="tag">Postman</span><span class="tag">Newman</span><span class="tag">Swagger</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="skill-header">
+          <div class="skill-icon" aria-label="Test Management icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="4" width="6" height="6" rx="1.2" stroke="currentColor" stroke-width="1.6"/>
+              <rect x="15" y="4" width="6" height="6" rx="1.2" stroke="currentColor" stroke-width="1.6"/>
+              <rect x="9" y="14" width="6" height="6" rx="1.2" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M9 7h6M6 10v2h6M18 10v2h-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Test Management</h3>
+        </div>
+        <p class="lead">Requirements traceability, coverage, risk-based prioritization.</p>
+        <div class="quick-badges">
+          <span class="tag">JIRA</span><span class="tag">TestRail</span><span class="tag">Confluence</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="skill-header">
+          <div class="skill-icon" aria-label="Mobile QA icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="7" y="2.8" width="10" height="18.4" rx="2" stroke="currentColor" stroke-width="1.6"/>
+              <circle cx="12" cy="18.8" r="1.1" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Mobile QA</h3>
+        </div>
+        <p class="lead">Android manual testing, device matrix, crash triage, logs.</p>
+        <div class="quick-badges">
+          <span class="tag">ADB</span><span class="tag">Logcat</span><span class="tag">Firebase</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="skill-header">
+          <div class="skill-icon" aria-label="Data and Tools icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <ellipse cx="12" cy="6" rx="7" ry="3.2" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M5 6v8c0 1.8 3.1 3.2 7 3.2s7-1.4 7-3.2V6" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M8.5 12h7M8.5 15h4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Data & Tools</h3>
+        </div>
+        <p class="lead">SQL basics, lightweight scripts, analytics/GA for QA insights.</p>
+        <div class="quick-badges">
+          <span class="tag">SQL</span><span class="tag">GA4</span><span class="tag">Git</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
     <!-- SERVICES -->
-    <section class="section" id="services">
-      <div class="container">
-        <h2 class="section-title">Services</h2>
-        <p class="section-sub">How I can help your team</p>
-        <div class="grid grid-3">
-          <div class="card">
-            <h3>Web Testing (Manual + Automation)</h3>
-            <p>End-to-end, regression, cross-browser testing with well-documented defects and reproducible steps; basic
-              Selenium/Playwright suites where appropriate.</p>
-          </div>
-          <div class="card">
-            <h3>Mobile App Testing (Manual)</h3>
-            <p>Functional, usability, and device coverage testing on Android, with logs/screenshots and risk-based
-              prioritization for releases.</p>
-          </div>
-          <div class="card">
-            <h3>QA Documentation</h3>
-            <p>Test plans, test cases, checklists, bug reports, and release notes aligned to requirements for clear
-              stakeholder visibility.</p>
-          </div>
-          <div class="card">
-            <h3>API Testing</h3>
-            <p>Postman/Newman collections, schema & auth checks, contract validation, and smoke suites for pipelines.
-            </p>
-          </div>
-          <div class="card">
-            <h3>QA Support</h3>
-            <p>Sprint support, story grooming, acceptance criteria review, and daily triage with engineering and
-              product.</p>
-          </div>
-          <div class="card">
-            <h3>CI/CD Readiness</h3>
-            <p>Basic automation hooks, artifacts (reports/screens), and pass/fail gates integrated into pipelines.</p>
-          </div>
+  <section class="section" id="services">
+  <div class="container">
+    <h2 class="section-title">Services</h2>
+    <p class="section-sub">How I can help your team</p>
+
+    <div class="grid grid-3" id="serviceGrid">
+      <!-- Visible 3 cards -->
+      <div class="service-card">
+        <div class="service-img">
+          <img src="images/web-testing1.jpg" alt="Web Testing">
+        </div>
+        <div class="service-info">
+          <h3>Web Testing (Manual + Automation)</h3>
+          <p>End-to-end, regression, and cross-browser testing with clear reports and reproducible steps.</p>
+          <a href="#" class="read-more">Read more </a>
         </div>
       </div>
-    </section>
+
+      <div class="service-card">
+        <div class="service-img">
+          <img src="images/mobile-app-testing-1.jpg" alt="Mobile App Testing">
+        </div>
+        <div class="service-info">
+          <h3>Mobile App Testing (Manual)</h3>
+          <p>Functional, usability, and device coverage testing on Android with detailed documentation.</p>
+          <a href="#" class="read-more">Read more </a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-img">
+          <img src="images/qa-docs.png" alt="QA Documentation">
+        </div>
+        <div class="service-info">
+          <h3>QA Documentation (Manual + Automation)</h3>
+          <p>Test plans, test cases, checklists, bug reports, and release notes aligned to requirements.</p>
+          <a href="#" class="read-more">Read more </a>
+        </div>
+      </div>
+
+      <!-- Hidden 3 cards -->
+      <div class="service-card hidden-service">
+        <div class="service-img">
+          <img src="images/api-testing.png" alt="API Testing">
+        </div>
+        <div class="service-info">
+          <h3>API Testing</h3>
+          <p>Postman/Newman collections, schema checks, contract validation, and smoke suites for pipelines.</p>
+          <a href="#" class="read-more">Read more </a>
+        </div>
+      </div>
+
+      <div class="service-card hidden-service">
+        <div class="service-img">
+          <img src="images/qa-support.jpg" alt="QA Support">
+        </div>
+        <div class="service-info">
+          <h3>QA Support</h3>
+          <p>Sprint support, story grooming, acceptance criteria review, and daily triage with engineering and product teams.</p>
+          <a href="#" class="read-more">Read more </a>
+        </div>
+      </div>
+
+      <div class="service-card hidden-service">
+        <div class="service-img">
+          <img src="images/cicd.png" alt="CI/CD Readiness">
+        </div>
+        <div class="service-info">
+          <h3>CI/CD Readiness</h3>
+          <p>Basic automation hooks, artifacts (reports/screens), and pass/fail gates integrated into pipelines.</p>
+          <a href="#" class="read-more">Read more  </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- See more / less button -->
+    <div class="see-more-wrapper">
+      <button id="seeMoreBtn" class="see-more-btn">See More ↓</button>
+      <button id="seeLessBtn" class="see-more-btn" style="display:none;">See Less ↑</button>
+    </div>
+  </div>
+</section>
+<script>
+  const seeMoreBtn = document.getElementById("seeMoreBtn");
+  const seeLessBtn = document.getElementById("seeLessBtn");
+  const hiddenCards = document.querySelectorAll(".hidden-service");
+
+  seeMoreBtn.addEventListener("click", function () {
+    hiddenCards.forEach(card => {
+      card.style.display = "block";
+    });
+    seeMoreBtn.style.display = "none";
+    seeLessBtn.style.display = "inline-block";
+  });
+
+  seeLessBtn.addEventListener("click", function () {
+    hiddenCards.forEach(card => {
+      card.style.display = "none";
+    });
+    seeLessBtn.style.display = "none";
+    seeMoreBtn.style.display = "inline-block";
+    window.scrollTo({ top: document.getElementById("services").offsetTop - 50, behavior: "smooth" });
+  });
+</script>
+
 
     <!-- EDUCATION (with logos) -->
-    <section class="section" id="education">
-      <div class="container">
-        <h2 class="section-title">Education</h2>
-        <div class="timeline">
+ <!-- EDUCATION (with logos + transparent backgrounds) -->
+<section class="section" id="education">
+  <div class="container">
+    <h2 class="section-title">Education</h2>
+    <div class="timeline">
 
-          <div class="timeline-item">
-            <div class="timeline-icon">
-              <img src="images/GUB.png" alt="Green University of Bangladesh"
-                style="width:70px; height:70px; border-radius:50%; object-fit:cover; border:2px solid #ddd;" />
-            </div>
-            <div class="timeline-content">
-              <span class="date">2022 – 2026</span>
-              <h4>B.Sc. in Computer Science &amp; Engineering (CSE)</h4>
-              <p>Green University of Bangladesh — <b>CGPA: 3.37</b></p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-icon">
-              <img src="images/BAF.png" alt="BAF Shaheen College Dhaka"
-                style="width:70px; height:70px; border-radius:50%; object-fit:cover; border:2px solid #ddd;" />
-            </div>
-            <div class="timeline-content">
-              <span class="date">2018 – 2020</span>
-              <h4>Higher Secondary Certificate</h4>
-              <p>BAF Shaheen College, Dhaka — <b>GPA: 5.00</b></p>
-            </div>
-          </div>
-
+      <!-- 🎓 Green University -->
+      <div class="timeline-item">
+        <div class="timeline-icon">
+          <a href="https://www.green.edu.bd/" target="_blank" title="Visit Green University of Bangladesh">
+            <img src="images/green.png" alt="Green University of Bangladesh" />
+          </a>
+        </div>
+        <div class="timeline-content gub-bg">
+          <span class="date">2022 – 2026</span>
+          <h4>B.Sc. in Computer Science &amp; Engineering (CSE)</h4>
+          <p>Green University of Bangladesh — <b>CGPA: 3.37</b></p>
         </div>
       </div>
-    </section>
+
+      <!-- 🎓 BAF Shaheen College -->
+      <div class="timeline-item">
+        <div class="timeline-icon">
+          <a href="https://www.bafsd.edu.bd/" target="_blank" title="Visit BAF Shaheen College, Dhaka">
+            <img src="images/BAF.png" alt="BAF Shaheen College" />
+          </a>
+        </div>
+        <div class="timeline-content baf-bg">
+          <span class="date">2018 – 2020</span>
+          <h4>Higher Secondary Certificate</h4>
+          <p>BAF Shaheen College, Dhaka — <b>GPA: 5.00</b></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 
     <!-- EXPERIENCE -->
     <section class="section" id="experience">
-      <div class="container">
-        <h2 class="section-title">Experience</h2>
-        <div class="grid grid-2">
-          <div class="card exp-card">
-            <img class="exp-logo" src="images/logo.png" alt="360 Pathshala" />
-            <div class="exp-body">
-              <h4>SQA Engineer Intern — 360 Pathshala</h4>
-              <div class="exp-meta">2025 – Present · Dhaka (Remote)</div>
-              <ul style="margin-left:18px; color: var(--muted)">
-                <li>Designing and executing test cases for web and mobile applications.</li>
-                <li>Performing manual testing to identify bugs, inconsistencies, and performance issues.</li>
-                <li>Preparing detailed bug reports and collaborating with the development team for issue resolution.
-                </li>
-                <li>Learning the basics of automation testing (Selenium, JUnit, etc.).</li>
-                <li>Understanding SDLC and Agile methodologies.</li>
-                <li>Authored Postman suites and smoke checks for CI.</li>
-                <li>Collaborated with devs on defect triage & root cause.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="card exp-card">
-            <img class="exp-logo" src="images/icon2.jpg" alt="Brilliant Brains Valley" />
-            <div class="exp-body">
-              <h4>Digital Marketing Specialist — Brilliant Brains Valley</h4>
-              <div class="exp-meta">2022 – 2024 · Dhaka</div>
-              <ul style="margin-left:18px; color: var(--muted)">
-                <li>Ran SEO/social campaigns; collaborated on analytics reviews.</li>
-                <li>Improved content quality and performance reporting.</li>
-              </ul>
-            </div>
-          </div>
+  <div class="container">
+    <h2 class="section-title">Experience</h2>
+
+    <div class="timeline">
+     <!-- 🔹 Octopi digital -->
+         <div class="timeline-item exp-card">
+  <div class="timeline-icon">
+    <a href="https://octopi-digital.com/" target="_blank" rel="noopener">
+      <img class="exp-logo" src="images/octopi.jpg" alt="Octopi Digital LLC" />
+    </a>
+  </div>
+  <div class="timeline-content exp-body">
+    <h4>QA Tester — Octopi Digital LLC</h4>
+    <div class="exp-meta">Nov 2025 – Present · Dhaka (On-site)</div>
+    <ul>
+      <li>Performing comprehensive manual and functional testing for both web and mobile applications.</li>
+      <li>Executing test cases to identify UI, performance, and usability issues across multiple platforms.</li>
+      <li>Collaborating with developers and product teams to ensure timely issue resolution and product quality.</li>
+      <li>Documenting test plans, bug reports, and validation results for each development cycle.</li>
+      <li>Contributing to continuous improvement in QA processes using Agile and SDLC principles.</li>
+    </ul>
+  </div>
+</div>
+
+
+      <!-- 🔹 Zensoft Lab -->
+      <div class="timeline-item exp-card">
+        <div class="timeline-icon">
+          <a href="https://zensoftlab.com/services" target="_blank" rel="noopener">
+            <img class="exp-logo" src="images/zensoft.png" alt="Zensoft Lab" />
+          </a>
+        </div>
+        <div class="timeline-content exp-body">
+          <h4>SQA Engineer Intern — Zensoft Lab</h4>
+          <div class="exp-meta">Sep 2025 – Present · Dhaka (On-site)</div>
+          <ul>
+            <li>Conducting manual testing for web applications to ensure functionality and performance.</li>
+            <li>Designing detailed test cases and documenting test results.</li>
+            <li>Collaborating closely with developers to identify, reproduce, and resolve issues.</li>
+            <li>Gaining hands-on experience with automation tools (Selenium, JUnit, etc.).</li>
+            <li>Applying SDLC and Agile methodologies in real-world workflows.</li>
+            <li>Assisting in regression and user acceptance testing to maintain product quality.</li>
+          </ul>
         </div>
       </div>
-    </section>
+
+      <!-- 🔹 360 Pathshala -->
+      <div class="timeline-item exp-card">
+        <div class="timeline-icon">
+          <a href="http://www.360pathshala.com/" target="_blank" rel="noopener">
+            <img class="exp-logo" src="images/logo.png" alt="360 Pathshala" />
+          </a>
+        </div>
+        <div class="timeline-content exp-body">
+          <h4>SQA Engineer Intern — 360 Pathshala</h4>
+          <div class="exp-meta">July 2025 – Present · Dhaka (Remote)</div>
+          <ul>
+            <li>Designing and executing test cases for web and mobile applications.</li>
+            <li>Performing manual testing to identify bugs and inconsistencies.</li>
+            <li>Collaborating with dev teams for issue resolution.</li>
+            <li>Learning automation testing (Selenium, JUnit, etc.).</li>
+            <li>Understanding SDLC and Agile methodologies.</li>
+            <li>Authored Postman suites for CI smoke checks.</li>
+          </ul>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</section>
 
     <!-- PROJECTS -->
     <section class="section" id="projects">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-        <p class="section-sub">Demo/placeholder items — replace with your own</p>
-        <div class="grid grid-3">
-          <a class="project" href="#" target="_blank">
-            <img src="images/ux.jpg" alt="QA Web" />
-            <div class="p-body">
-              <h4>QA Web Suite</h4>
-              <p class="lead">Selenium/Playwright basic regression across core flows.</p>
-              <div><span class="tag">Selenium</span><span class="tag">Playwright</span><span class="tag">CI</span></div>
-            </div>
-          </a>
-          <a class="project" href="#" target="_blank">
-            <img src="images/con.jpg" alt="QA API" />
-            <div class="p-body">
-              <h4>API Contract Tests</h4>
-              <p class="lead">Postman collections w/ Newman CLI for pipelines.</p>
-              <div><span class="tag">Postman</span><span class="tag">Newman</span><span class="tag">Swagger</span></div>
-            </div>
-          </a>
-          <a class="project" href="https://github.com/shawon-sqa" target="_blank">
-            <img src="images/mobile.jpg" alt="QA Mobile" />
-            <div class="p-body">
-              <h4>Mobile QA Checklist</h4>
-              <p class="lead">Device matrix, smoke/regression templates, logs.</p>
-              <div><span class="tag">Android</span><span class="tag">ADB</span><span class="tag">Logcat</span></div>
-            </div>
-          </a>
-        </div>
-        <div style="margin-top:20px">
-          <a class="btn-ghost" href="https://github.com/shawon-sqa" target="_blank">More on GitHub</a>
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-sub">Highlighting hands-on projects that demonstrate my testing and automation expertise</p>
+
+    <div class="grid grid-3">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <a href="https://github.com/shawon-sqa" class="icon-link" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <img src="images/ux.jpg" alt="QA Web" />
+        <div class="project-overlay">
+          <h4>QA Web Suite</h4>
+          <p class="lead">Selenium/Playwright basic regression across core flows.</p>
+          <div class="tag-box">
+            <span class="tag">Selenium</span>
+            <span class="tag">Playwright</span>
+            <span class="tag">CI</span>
+          </div>
         </div>
       </div>
-    </section>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <a href="https://github.com/shawon-sqa/API-Testing-Project" class="icon-link" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <img src="images/con.jpg" alt="QA API" />
+        <div class="project-overlay">
+          <h4>API Contract Tests</h4>
+          <p class="lead">Postman collections w/ Newman CLI for pipelines.</p>
+          <div class="tag-box">
+            <span class="tag">Postman</span>
+            <span class="tag">Newman</span>
+            <span class="tag">Swagger</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <a href="https://github.com/shawon-sqa/Manual-Testing-Project" class="icon-link" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <img src="images/mobile.jpg" alt="QA Mobile" />
+        <div class="project-overlay">
+          <h4>Mobile QA Checklist</h4>
+          <p class="lead">Device matrix, smoke/regression templates, logs.</p>
+          <div class="tag-box">
+            <span class="tag">Android</span>
+            <span class="tag">ADB</span>
+            <span class="tag">Logcat</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-btn">
+      <a class="btn-ghost" href="https://github.com/shawon-sqa" target="_blank">More on GitHub</a>
+    </div>
+  </div>
+</section>
+
 
     <!-- CERTIFICATIONS (unchanged layout + certificate image thumbnail) -->
-    <section class="section" id="certifications">
-      <div class="container">
-        <h2 class="section-title">Certifications</h2>
-        <div class="grid grid-2">
-          <div class="card cert">
-            <img src="images/ostad.png" alt="Software Testing Foundations Provider" />
-            <div>
-              <h4>Software Testing Foundations</h4>
-              <div class="lead">(Md Shawon Ahmed) </div>
-              <div class="exp-meta">Issued: 5 August 2025</div>
-            </div>
-            <!-- Add actual certificate image thumbnail -->
-            <a href="images/ostadC.png" target="_blank" title="Open certificate">
-              <img class="cert-thumb" src="images/ostadC.png" alt="Certificate preview" />
-            </a>
-          </div>
+ <!-- ===== CERTIFICATIONS SECTION ===== -->
+<section class="section" id="certifications">
+  <div class="container">
+    <h2 class="section-title">Certifications</h2>
 
-          <div class="card cert">
-            <img src="images/dream it.png" alt="Meta Expert Provider" />
-            <div>
-              <h4>Meta Expert</h4>
-              <div class="lead">(Md Shawon Ahmed) </div>
-              <div class="exp-meta">Issued: 2022</div>
-            </div>
-            <a href="images/srdreram.png" target="_blank" title="Open certificate">
-              <img class="cert-thumb" src="images/srdreram.png" alt="Certificate preview" />
-            </a>
-          </div>
+    <!-- Filter Tabs -->
+    <div class="cert-filter">
+      <button class="filter-btn active" data-category="all">All Certifications & Courses</button>
+      <button class="filter-btn" data-category="web">Web</button>
+      <button class="filter-btn" data-category="app">App</button>
+      <button class="filter-btn" data-category="programming">Programming</button>
+      <button class="filter-btn" data-category="other">Other</button>
+    </div>
 
-          <div class="card cert">
-            <img src="images/Great.jpg" alt="Data Analytics Using Excel Provider" />
-            <div>
-              <h4>Data Analytics Using Excel</h4>
-              <div class="lead">(Md Shawon Ahmed) </div>
-              <div class="exp-meta">Issued: March, 2023</div>
-            </div>
-            <a href="images/data analysisi.png" target="_blank" title="Open certificate">
-              <img class="cert-thumb" src="images/data analysisi.png" alt="Certificate preview" />
-            </a>
-          </div>
-
-          <div class="card cert">
-            <img src="images/ten.jpg" alt="Presentation & Public Speaking Provider" />
-            <div>
-              <h4>Presentation & Public Speaking</h4>
-              <div class="lead">(Md Shawon Ahmed) </div>
-              <div class="exp-meta">Issued: 2022</div>
-            </div>
-            <a href="images/presentation.png" target="_blank" title="Open certificate">
-              <img class="cert-thumb" src="images/presentation.png" alt="Certificate preview" />
-            </a>
-          </div>
+    <!-- Certificate Grid -->
+    <div class="cert-grid">
+      <!-- Card 1 -->
+      <div class="cert-card" data-category="web">
+        <img src="images/ostadC.png" alt="Software Testing Foundation" />
+        <div class="cert-info">
+          <h3>Software Testing Foundation</h3>
+          <p>By Ostad</p>
+          <span class="view-btn">+</span>
         </div>
       </div>
-    </section>
+
+      <!-- Card 2 -->
+      <div class="cert-card" data-category="app">
+        <img src="images/Introduction to JIRA.png" alt="Introduction to JIRA" />
+        <div class="cert-info">
+          <h3>Introduction to JIRA</h3>
+          <p>By Simplilearn</p>
+          <span class="view-btn">+</span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="cert-card" data-category="programming">
+        <img src="images/Introduction to API Testing with Postman.jpeg" alt="Introduction to API Testing with Postman" />
+        <div class="cert-info">
+          <h3>Introduction to API Testing with Postman</h3>
+          <p>By 10Pearls University</p>
+          <span class="view-btn">+</span>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="cert-card" data-category="web">
+        <img src="images/API Testing and Basic Overview of JMeter.png" alt="API Testing and Basic Overview of JMeter" />
+        <div class="cert-info">
+          <h3>API Testing and Basic Overview of JMeter</h3>
+          <p>By 10Pearls University</p>
+          <span class="view-btn">+</span>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="cert-card" data-category="web">
+        <img src="images/SQA Basic Course.jpg" alt="SQA Basic Course" />
+        <div class="cert-info">
+          <h3>SQA Basic Course</h3>
+          <p>By IT Training BD</p>
+          <span class="view-btn">+</span>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="cert-card" data-category="programming">
+        <img src="images/data analysisi.png" alt="Data Analystics Uisng Excel" />
+        <div class="cert-info">
+          <h3>Data Analystics Uisng Excel</h3>
+          <p>By Great Learning</p>
+          <span class="view-btn">+</span>
+        </div>
+      </div>
+
+      <!-- Extra Cards for Load More -->
+      <div class="cert-card hidden" data-category="other">
+        <img src="images/WD.jpg" alt="21st Century Employability Skilling Program – Basic Level" />
+        <div class="cert-info">
+          <h3>21st Century Employability Skilling Program – Basic Level</h3>
+          <p>By Wadhwani Foundation</p>
+          <span class="view-btn">+</span>
+        </div>
+      </div>
+
+      <div class="cert-card hidden" data-category="app">
+        <img src="images/API Testing and Basic Overview of JMeter.png" alt="API Testing and Basic Overview of JMeter" />
+        <div class="cert-info">
+          <h3>API Testing and Basic Overview of JMeter</h3>
+          <p>By 10Pearls University</p>
+          <span class="view-btn">+</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Load Buttons -->
+    <div class="load-more-container">
+      <button id="loadMoreBtn">Load more</button>
+      <button id="loadLessBtn" class="hidden">Load less</button>
+    </div>
+  </div>
+
+  <!-- Inline Script -->
+  <script>
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const certCards = document.querySelectorAll('.cert-card');
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    const loadLessBtn = document.getElementById('loadLessBtn');
+    let visibleCards = 6;
+
+    // Filter function
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        visibleCards = 6;
+        updateVisibleCards();
+      });
+    });
+
+    // Load more
+    loadMoreBtn.addEventListener('click', () => {
+      visibleCards += 6;
+      updateVisibleCards();
+    });
+
+    // Load less
+    loadLessBtn.addEventListener('click', () => {
+      visibleCards = 6;
+      updateVisibleCards();
+      window.scrollTo({ top: document.getElementById('certifications').offsetTop, behavior: 'smooth' });
+    });
+
+    // Update cards
+    function updateVisibleCards() {
+      const activeCategory = document.querySelector('.filter-btn.active').dataset.category;
+      let shownCount = 0;
+
+      certCards.forEach(card => {
+        const match = activeCategory === 'all' || card.dataset.category === activeCategory;
+        if (match && shownCount < visibleCards) {
+          card.classList.remove('hidden');
+          shownCount++;
+        } else if (match) {
+          card.classList.add('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      const visibleCategoryCards = Array.from(certCards).filter(
+        c => activeCategory === 'all' || c.dataset.category === activeCategory
+      );
+      const allShown = shownCount >= visibleCategoryCards.length;
+
+      loadMoreBtn.style.display = allShown ? 'none' : 'inline-block';
+      loadLessBtn.classList.toggle('hidden', visibleCards <= 6);
+    }
+
+    updateVisibleCards();
+  </script>
+</section>
+
+
+
 
     <!-- CONTACT (with validation) -->
-   <section class="section" id="contact">
+  <section class="section" id="contact">
   <div class="container">
     <h2 class="section-title">Contact</h2>
     <p class="section-sub">Let's build something reliable together</p>
@@ -1032,6 +1364,32 @@
             mdshawonahmed563@gmail.com
           </a>
         </p>
+
+        <!-- ✅ Google Map Embed with Marked Dhaka Cantonment -->
+       
+<div style="margin-top:12px; border-radius:10px; overflow:hidden; text-align:center;">
+  <h4 style="margin-bottom:6px; color:#00bfff;">Google Map Location</h4>
+  <iframe
+    src="https://www.google.com/maps?q=Dhaka%20Cantonment%2C%20Bangladesh&z=15&output=embed"
+    width="100%"
+    height="200"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+  <div style="text-align:center; margin-top:6px;">
+    <a
+      href="https://www.google.com/maps/place/Dhaka+Cantonment,+Dhaka,+Bangladesh/@23.7797534,90.3826066,15z"
+      target="_blank"
+      style="color:#00bfff; text-decoration:underline;">
+      View larger map
+    </a>
+  </div>
+</div>
+
+
+
         <div class="social" style="margin-top:8px">
           <a href="https://www.facebook.com/share/zrfeBmpU6BJ9ZnfE/" target="_blank"><span class="icon-facebook"></span></a>
           <a href="https://instagram.com/__life__racer_2.0?igshid=NTE5MzUyOTU=" target="_blank"><span class="icon-instagram"></span></a>
@@ -1129,6 +1487,7 @@
       });
   });
 </script>
+
 
 
     <!-- FOOTER -->
@@ -1299,6 +1658,7 @@
       window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
     });
   </script>
+
   <script>
   const hamburger = document.getElementById("hamburger");
   const sidebar = document.getElementById("sidebar");
