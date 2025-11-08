@@ -261,11 +261,9 @@ p {
   color: #fff;
 
   /* ✅ Background same as Skills section */
-  background: linear-gradient(
-      180deg,
+  background: linear-gradient(180deg,
       rgba(255, 255, 255, 0.02),
-      transparent 40%
-    ),
+      transparent 40%),
     var(--section-grad);
 }
 
@@ -274,16 +272,12 @@ p {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-      circle at 25% 20%,
+  background: radial-gradient(circle at 25% 20%,
       rgba(0, 255, 255, 0.08),
-      transparent 60%
-    ),
-    radial-gradient(
-      circle at 80% 80%,
+      transparent 60%),
+    radial-gradient(circle at 80% 80%,
       rgba(0, 128, 255, 0.12),
-      transparent 80%
-    );
+      transparent 80%);
   z-index: 1;
   pointer-events: none;
 }
@@ -396,6 +390,7 @@ p {
     opacity: 0;
     transform: translateX(-40px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -407,6 +402,7 @@ p {
     opacity: 0;
     transform: translateX(40px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -457,9 +453,11 @@ p {
   .hero-title {
     font-size: 1.8rem;
   }
+
   .hero-desc {
     font-size: 0.95rem;
   }
+
   .btn-brand,
   .btn-ghost {
     padding: 10px 22px;
@@ -531,9 +529,11 @@ p {
 .hamburger.active .bar:nth-child(1) {
   transform: rotate(45deg) translate(7px, 7px);
 }
+
 .hamburger.active .bar:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger.active .bar:nth-child(3) {
   transform: rotate(-45deg) translate(8px, -8px);
 }
@@ -549,6 +549,7 @@ p {
   transition: opacity 0.3s ease;
   z-index: 900;
 }
+
 .backdrop.show {
   opacity: 1;
   visibility: visible;
@@ -579,15 +580,17 @@ p {
 @keyframes sidebarGlow {
   0% {
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.08),
-                4px 0 40px rgba(0, 255, 255, 0.05);
+      4px 0 40px rgba(0, 255, 255, 0.05);
   }
+
   50% {
     box-shadow: 0 0 30px rgba(0, 255, 255, 0.2),
-                6px 0 60px rgba(0, 255, 255, 0.1);
+      6px 0 60px rgba(0, 255, 255, 0.1);
   }
+
   100% {
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.08),
-                4px 0 40px rgba(0, 255, 255, 0.05);
+      4px 0 40px rgba(0, 255, 255, 0.05);
   }
 }
 
@@ -674,7 +677,7 @@ p {
   background: rgba(0, 255, 255, 0.12);
   color: #fff;
   box-shadow: inset 0 0 12px rgba(0, 255, 255, 0.15),
-              0 0 15px rgba(0, 255, 255, 0.08);
+    0 0 15px rgba(0, 255, 255, 0.08);
 }
 
 .sidebar .nav a.active::before {
@@ -710,6 +713,7 @@ p {
 
 /* Responsive */
 @media (min-width: 992px) {
+
   .hamburger,
   .backdrop {
     display: none;
@@ -733,11 +737,9 @@ p {
   align-items: center;
   padding: 40px;
   border: 1px solid var(--line);
-  background: linear-gradient(
-    145deg,
-    color-mix(in oklab, var(--surface), transparent 5%),
-    color-mix(in oklab, var(--surface-2), transparent 10%)
-  );
+  background: linear-gradient(145deg,
+      color-mix(in oklab, var(--surface), transparent 5%),
+      color-mix(in oklab, var(--surface-2), transparent 10%));
   border-radius: var(--radius-lg);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -773,12 +775,10 @@ p {
   position: absolute;
   inset: -3px;
   border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    rgba(0, 255, 240, 0.6),
-    rgba(0, 140, 255, 0.6),
-    rgba(0, 255, 240, 0.6)
-  );
+  background: conic-gradient(from 0deg,
+      rgba(0, 255, 240, 0.6),
+      rgba(0, 140, 255, 0.6),
+      rgba(0, 255, 240, 0.6));
   z-index: -1;
   opacity: 0.8;
   transition: opacity 0.4s ease;
@@ -798,14 +798,13 @@ p {
   transform: translateY(-8px) scale(1.05);
   filter: drop-shadow(0 15px 35px rgba(0, 255, 240, 0.4));
 }
+
 #about .about-image:hover::before {
   opacity: 1;
-  background: conic-gradient(
-    from 180deg,
-    rgba(0, 255, 230, 0.9),
-    rgba(0, 180, 255, 0.9),
-    rgba(0, 255, 230, 0.9)
-  );
+  background: conic-gradient(from 180deg,
+      rgba(0, 255, 230, 0.9),
+      rgba(0, 180, 255, 0.9),
+      rgba(0, 255, 230, 0.9));
 }
 
 /* ---------- TEXT & BUTTON ---------- */
@@ -936,7 +935,8 @@ p {
   position: relative;
   margin-bottom: 40px;
   display: flex;
-  align-items: center; /* ✅ perfectly centers logo & box */
+  align-items: center;
+  /* ✅ perfectly centers logo & box */
   gap: 18px;
 }
 
@@ -950,7 +950,8 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* ✅ keeps logo clean inside circle */
+  overflow: hidden;
+  /* ✅ keeps logo clean inside circle */
   box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
   transition: border-color var(--t-fast), transform var(--t-fast);
 }
@@ -969,7 +970,8 @@ p {
 #education .timeline-icon img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* ✅ fills circle neatly */
+  object-fit: cover;
+  /* ✅ fills circle neatly */
   border-radius: 50%;
   transition: transform 0.3s ease;
 }
@@ -989,10 +991,11 @@ p {
   border: 1px solid var(--line);
   box-shadow: 0 8px 20px rgba(0, 0, 0, .35);
   transition: border-color var(--t-fast), box-shadow var(--t-med);
-  
+
   width: 100%;
   max-width: 520px;
-  min-height: 115px; /* ensures both boxes equal */
+  min-height: 115px;
+  /* ensures both boxes equal */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1193,7 +1196,8 @@ p {
   position: relative;
   margin-bottom: 42px;
   display: flex;
-  align-items: flex-start; /* ✅ align logo to top */
+  align-items: flex-start;
+  /* ✅ align logo to top */
   gap: 20px;
   transition: all 0.3s ease;
 }
@@ -1212,8 +1216,10 @@ p {
   box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
   transition: all 0.3s ease;
   overflow: hidden;
-  align-self: flex-start; /* ✅ top align */
-  margin-top: 4px; /* slight adjustment to match heading level */
+  align-self: flex-start;
+  /* ✅ top align */
+  margin-top: 4px;
+  /* slight adjustment to match heading level */
 }
 
 #experience .timeline-icon a {
@@ -1566,7 +1572,7 @@ p {
 ================================ */
 #projects {
   position: relative;
-  background: linear-gradient(180deg, rgba(255,255,255, .015), transparent 40%), var(--section-grad);
+  background: linear-gradient(180deg, rgba(255, 255, 255, .015), transparent 40%), var(--section-grad);
   padding: 60px 0;
 }
 
@@ -1591,14 +1597,14 @@ p {
       color-mix(in oklab, var(--surface), transparent 8%),
       color-mix(in oklab, var(--surface-2), transparent 15%));
   border: 1px solid color-mix(in oklab, var(--accent), transparent 85%);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
   transition: transform .45s ease, box-shadow .45s ease, border-color .3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-8px) scale(1.02);
   border-color: color-mix(in oklab, var(--accent), transparent 60%);
-  box-shadow: 0 24px 48px rgba(0,0,0,0.7);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.7);
 }
 
 /* Top-right GitHub icon */
@@ -1609,11 +1615,12 @@ p {
   z-index: 3;
   color: var(--accent);
   font-size: 1.2rem;
-  background: rgba(15,20,35,0.85);
+  background: rgba(15, 20, 35, 0.85);
   padding: 6px 8px;
   border-radius: 50%;
   transition: all 0.3s ease;
 }
+
 .project-card .icon-link:hover {
   background: var(--accent-grad);
   color: #0b1220;
@@ -1627,6 +1634,7 @@ p {
   object-fit: cover;
   transition: transform .5s ease, filter .5s ease;
 }
+
 .project-card:hover img {
   transform: scale(1.08);
   filter: brightness(1.15);
@@ -1638,7 +1646,7 @@ p {
   width: 85%;
   background: rgba(20, 25, 40, 0.95);
   border-radius: 14px;
-  box-shadow: 0 8px 26px rgba(0,0,0,0.6);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.6);
   padding: 16px 18px 20px;
   backdrop-filter: blur(8px);
   text-align: center;
@@ -1646,6 +1654,7 @@ p {
   margin: -40px auto 18px;
   transition: all .4s ease;
 }
+
 .project-card:hover .project-overlay {
   background: rgba(25, 30, 50, 0.98);
   transform: translateY(-6px);
@@ -1658,6 +1667,7 @@ p {
   color: #fff;
   margin-bottom: 6px;
 }
+
 .project-overlay .lead {
   font-size: .85rem;
   color: var(--muted);
@@ -1672,6 +1682,7 @@ p {
   flex-wrap: nowrap;
   gap: 6px;
 }
+
 .project-overlay .tag {
   display: inline-block;
   font-size: .7rem;
@@ -1683,12 +1694,13 @@ p {
   color: var(--accent);
   transition: all .25s ease;
 }
+
 .project-overlay .tag:hover {
   background: var(--accent-grad);
   color: #0b1220;
   border-color: transparent;
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(16,209,216, .35);
+  box-shadow: 0 4px 10px rgba(16, 209, 216, .35);
 }
 
 /* GitHub button */
@@ -1696,6 +1708,7 @@ p {
   text-align: center;
   margin-top: 36px;
 }
+
 #projects .btn-ghost {
   display: inline-block;
   padding: 10px 22px;
@@ -1707,6 +1720,7 @@ p {
   background: transparent;
   transition: all var(--t-fast);
 }
+
 #projects .btn-ghost:hover {
   background: var(--accent-grad);
   color: #0b1220;
@@ -1721,13 +1735,16 @@ p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
 @media (max-width: 640px) {
   #projects .grid-3 {
     grid-template-columns: 1fr;
   }
+
   .project-card img {
     height: 220px;
   }
+
   .project-overlay {
     width: 90%;
     margin-top: -35px;
@@ -1739,7 +1756,7 @@ p {
 /* CERTIFICATIONS SECTION     */
 /* ========================== */
 
-  /* SECTION */
+/* SECTION */
 #certifications {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 40%), var(--section-grad);
   padding: 60px 0;
@@ -1921,6 +1938,7 @@ p {
   .cert-info h3 {
     font-size: 1.1rem;
   }
+
   .cert-info p {
     font-size: 0.9rem;
   }
@@ -2022,7 +2040,8 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 270px; /* equal height for perfect badge line */
+  height: 270px;
+  /* equal height for perfect badge line */
 }
 
 #skills .card:hover {
@@ -2042,7 +2061,8 @@ p {
   font-size: .95rem;
   color: var(--muted);
   margin-bottom: 14px;
-  flex-grow: 1; /* ✅ pushes badges to bottom evenly */
+  flex-grow: 1;
+  /* ✅ pushes badges to bottom evenly */
 }
 
 /* Tag / Badge styles */
@@ -2050,7 +2070,8 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: auto; /* ✅ ensures same line alignment */
+  margin-top: auto;
+  /* ✅ ensures same line alignment */
 }
 
 #skills .tag {
@@ -2085,10 +2106,13 @@ p {
   #skills .grid-3 {
     grid-template-columns: 1fr;
   }
+
   #skills .card {
-    height: auto; /* ✅ Mobile: flexible height */
+    height: auto;
+    /* ✅ Mobile: flexible height */
   }
 }
+
 /* Skill card icon */
 #skills .skill-icon {
   width: 48px;
@@ -2106,7 +2130,7 @@ p {
       color-mix(in oklab, var(--surface), transparent 6%),
       color-mix(in oklab, var(--surface-2), transparent 12%));
   box-shadow:
-    0 8px 22px rgba(0,0,0,.35),
+    0 8px 22px rgba(0, 0, 0, .35),
     0 0 0 1px color-mix(in oklab, var(--accent), transparent 72%),
     0 0 22px color-mix(in oklab, var(--accent), transparent 70%);
   color: color-mix(in oklab, var(--accent), white 10%);
@@ -2117,6 +2141,7 @@ p {
   height: 26px;
   display: block;
 }
+
 /* horizontal alignment for icon + title */
 #skills .skill-header {
   display: flex;
@@ -2204,13 +2229,15 @@ p {
   position: relative;
   margin: -60px auto 0;
   width: 85%;
-  background: rgba(20, 25, 40, 0.75); /* ✅ Transparent look */
+  background: rgba(20, 25, 40, 0.75);
+  /* ✅ Transparent look */
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-lg);
   padding: 18px 20px 22px;
   box-shadow: 0 8px 26px rgba(0, 0, 0, 0.6),
-              0 0 12px rgba(16, 209, 216, 0.08);
-  backdrop-filter: blur(10px); /* ✅ Glass blur effect */
+    0 0 12px rgba(16, 209, 216, 0.08);
+  backdrop-filter: blur(10px);
+  /* ✅ Glass blur effect */
   text-align: center;
   transition: all .35s ease;
 }
@@ -2218,8 +2245,8 @@ p {
 #services .service-card:hover .service-info {
   background: rgba(25, 30, 50, 0.82);
   transform: translateY(-5px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.7),
-              0 0 16px rgba(16, 209, 216, 0.12);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7),
+    0 0 16px rgba(16, 209, 216, 0.12);
 }
 
 /* Title inside box */
@@ -2287,9 +2314,11 @@ p {
   #services .grid-3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
   #services .service-card {
     min-height: 400px;
   }
+
   #services .service-img {
     height: 230px;
   }
